@@ -51,7 +51,6 @@
       .offer-card:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(76,32,39,.14)}
       .offer-card img{display:block;width:100%;height:auto;max-height:560px;object-fit:cover;object-position:top center}
       .offer-card.offer-square img{aspect-ratio:1/1;max-height:none}
-      .offer-card.is-missing{display:none}
       .offers-note{margin:22px 0 0;text-align:center;color:#67423a;font-size:.88rem}
       @media(max-width:900px){
         .hero-grid{grid-template-columns:1fr;gap:38px}
@@ -107,32 +106,11 @@
     if (document.querySelector("#ofertas")) return;
 
     const offers = [
-      {
-        product: "Pão recheado de frango com Catupiry",
-        image: "assets/images/promo-pao-recheado-hq.webp",
-        alt: "Oferta de pão recheado de frango com Catupiry",
-        square: true
-      },
-      {
-        product: "Brownie sabor Ninho",
-        image: "assets/images/promo-brownie-ninho-hq.webp",
-        alt: "Oferta de brownie sabor Ninho"
-      },
-      {
-        product: "Bolo mole",
-        image: "assets/images/promo-bolo-mole-hq.webp",
-        alt: "Oferta de fatia de bolo mole"
-      },
-      {
-        product: "Torta de frango com Guaraná Antártica",
-        image: "assets/images/promo-torta-frango-hq.webp",
-        alt: "Oferta de torta de frango com Guaraná Antártica"
-      },
-      {
-        product: "Bolo mesclado",
-        image: "assets/images/promo-bolo-mesclado-hq.webp",
-        alt: "Oferta de bolo mesclado"
-      }
+      ["Pão recheado de frango com Catupiry", "assets/images/promo-pao-recheado-hq.webp", "Oferta de pão recheado de frango com Catupiry", true],
+      ["Brownie sabor Ninho", "assets/images/promo-brownie-ninho-hq.webp", "Oferta de brownie sabor Ninho", false],
+      ["Bolo mole", "assets/images/promo-bolo-mole-hq.webp", "Oferta de fatia de bolo mole", false],
+      ["Torta de frango com Guaraná Antártica", "assets/images/promo-torta-frango-hq.webp", "Oferta de torta de frango com Guaraná Antártica", false],
+      ["Bolo mesclado", "assets/images/promo-bolo-mesclado-hq.webp", "Oferta de bolo mesclado", false]
     ];
 
     const section = document.createElement("section");
@@ -151,18 +129,34 @@
     `;
 
     const grid = section.querySelector(".offers-grid");
-    offers.forEach((offer) => {
+    let loadedCount = 0;
+    let finishedCount = 0;
+
+    const finishImage = (loaded) => {
+      finishedCount += 1;
+      if (loaded) loadedCount += 1;
+      if (finishedCount === offers.length && loadedCount === 0) {
+        section.remove();
+        document.querySelector('.nav-links a[href="#ofertas"]')?.remove();
+      }
+    };
+
+    offers.forEach(([product, source, alt, square]) => {
       const card = document.createElement("a");
-      card.className = `offer-card${offer.square ? " offer-square" : ""}`;
-      card.dataset.product = offer.product;
+      card.className = `offer-card${square ? " offer-square" : ""}`;
+      card.dataset.product = product;
       card.href = "#";
 
       const image = document.createElement("img");
-      image.src = offer.image;
-      image.alt = offer.alt;
+      image.src = source;
+      image.alt = alt;
       image.loading = "lazy";
       image.decoding = "async";
-      image.addEventListener("error", () => card.classList.add("is-missing"), { once: true });
+      image.addEventListener("load", () => finishImage(true), { once: true });
+      image.addEventListener("error", () => {
+        card.remove();
+        finishImage(false);
+      }, { once: true });
 
       card.appendChild(image);
       grid.appendChild(card);
@@ -170,13 +164,9 @@
 
     const cardapio = document.querySelector("#cardapio");
     const destaques = document.querySelector("#destaques");
-    if (cardapio) {
-      cardapio.before(section);
-    } else if (destaques) {
-      destaques.after(section);
-    } else {
-      document.querySelector("main")?.appendChild(section);
-    }
+    if (cardapio) cardapio.before(section);
+    else if (destaques) destaques.after(section);
+    else document.querySelector("main")?.appendChild(section);
 
     const nav = document.querySelector(".nav-links");
     if (nav && !nav.querySelector('a[href="#ofertas"]')) {
@@ -195,7 +185,6 @@
     useHighQualityImages();
     createOffersSection();
     configureWhatsApp();
-
     const year = document.querySelector("#year");
     if (year) year.textContent = new Date().getFullYear();
   });
