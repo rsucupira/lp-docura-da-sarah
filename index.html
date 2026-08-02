@@ -4,262 +4,443 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#e94d82">
-  <meta name="description" content="Brownies, bolos, cookies, tortas, pão recheado e outras delícias artesanais da Doçura da Sarah em Fortaleza, Ceará. Faça seu pedido pelo WhatsApp.">
+  <meta name="description" content="Brownies, cookies, bolos, sobremesas e salgados artesanais da Doçura da Sarah em Fortaleza. Veja o catálogo e faça seu pedido pelo WhatsApp.">
+  <meta name="robots" content="index,follow">
+
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="Doçura da Sarah | Feito com amor">
-  <meta property="og:description" content="Delícias artesanais em Fortaleza. Consulte o cardápio e faça seu pedido pelo WhatsApp.">
-  <meta property="og:image" content="assets/images/hero-brownie-castanha.webp">
+  <meta property="og:title" content="Doçura da Sarah | Feito com amor em Fortaleza">
+  <meta property="og:description" content="Brownies, cookies, bolos, sobremesas e salgados artesanais. Escolha sua delícia e peça pelo WhatsApp.">
+  <meta property="og:image" content="https://rsucupira.github.io/lp-docura-da-sarah/assets/images/og-docura-da-sarah.jpg">
   <meta property="og:url" content="https://rsucupira.github.io/lp-docura-da-sarah/">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="canonical" href="https://rsucupira.github.io/lp-docura-da-sarah/">
   <link rel="icon" href="assets/images/favicon.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
   <title>Doçura da Sarah | Doces e salgados artesanais em Fortaleza</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Doçura da Sarah",
+    "description": "Brownies, cookies, bolos, sobremesas e salgados artesanais em Fortaleza.",
+    "url": "https://rsucupira.github.io/lp-docura-da-sarah/",
+    "telephone": "+55 85 98820-8245",
+    "image": "https://rsucupira.github.io/lp-docura-da-sarah/assets/images/og-docura-da-sarah.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Fortaleza",
+      "addressRegion": "CE",
+      "addressCountry": "BR"
+    },
+    "sameAs": ["https://www.instagram.com/docuradasarah/"]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-  <header class="site-header">
+  <header class="site-header" id="inicio">
     <div class="container nav">
       <a class="brand" href="#inicio" aria-label="Doçura da Sarah, início">
-        <img src="assets/images/logo-docura-da-sarah.webp" alt="" width="52" height="52">
+        <img src="assets/images/logo-docura-da-sarah-01.png" alt="" width="58" height="58">
         <span>
           <strong>Doçura da Sarah</strong>
           <small>Feito com amor</small>
         </span>
       </a>
 
-      <nav class="nav-links" aria-label="Navegação principal">
-        <a href="#destaques">Destaques</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="sr-only">Abrir menu</span>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="menu-principal" aria-label="Navegação principal">
+        <a href="#mais-pedidos">Mais pedidos</a>
         <a href="#cardapio">Cardápio</a>
+        <a href="#ofertas">Ofertas</a>
         <a href="#como-pedir">Como pedir</a>
       </nav>
 
-      <a class="button button-small whatsapp-link" data-message="Olá! Vim pelo site da Doçura da Sarah e gostaria de fazer um pedido." href="https://wa.me/5585988208245" target="_blank" rel="noopener">
+      <a class="button button-small header-order whatsapp-link" data-message="Olá, Sarah! Vim pelo site da Doçura da Sarah e gostaria de fazer um pedido." href="https://wa.me/5585988208245" target="_blank" rel="noopener">
         Fazer pedido
       </a>
     </div>
   </header>
 
   <main id="conteudo">
-    <section class="hero" id="inicio">
+    <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Confeitaria artesanal em Fortaleza</p>
-          <h1>Um carinho em forma de sabor.</h1>
-          <p class="hero-text">
-            Brownies, bolos, cookies, tortas e delícias feitas para deixar seus momentos ainda mais gostosos.
-          </p>
+          <p class="eyebrow"><span></span> Produção artesanal em Fortaleza</p>
+          <h1>Delícias que começam pelos olhos e conquistam no primeiro pedaço.</h1>
+          <p class="hero-text">Brownies, cookies, bolos, sobremesas e salgados preparados com carinho para o café, para presentear, para celebrar ou simplesmente para matar a vontade.</p>
 
-          <div class="actions">
-            <a class="button whatsapp-link" data-message="Olá! Vim pelo site da Doçura da Sarah e quero conhecer as opções disponíveis." href="https://wa.me/5585988208245" target="_blank" rel="noopener">
-              Pedir pelo WhatsApp
-            </a>
-            <a class="button button-secondary" href="#destaques">Ver as delícias</a>
+          <div class="hero-actions">
+            <a class="button whatsapp-link" data-message="Olá, Sarah! Vi o catálogo no site e gostaria de consultar as opções disponíveis." href="https://wa.me/5585988208245" target="_blank" rel="noopener">Ver opções no WhatsApp</a>
+            <a class="button button-secondary" href="#cardapio">Explorar o cardápio</a>
           </div>
 
-          <p class="helper">Consulte disponibilidade, valores, retirada e entrega pelo WhatsApp.</p>
+          <ul class="hero-points" aria-label="Diferenciais">
+            <li>Produção artesanal</li>
+            <li>Pedidos diretos pelo WhatsApp</li>
+            <li>Atendimento em Fortaleza-CE</li>
+          </ul>
         </div>
 
-        <div class="hero-visual">
-          <img src="assets/images/hero-brownie-castanha.webp" alt="Brownies de chocolate com castanhas preparados pela Doçura da Sarah" width="856" height="852">
-          <div class="hero-stamp">
-            <span>Produção artesanal</span>
-            <strong>Fortaleza — CE</strong>
-          </div>
+        <div class="hero-collage" aria-label="Seleção de produtos da Doçura da Sarah">
+          <figure class="hero-photo hero-photo-main">
+            <img src="assets/images/brownie-de-ninho-01.png" alt="Brownie de Ninho com recheio cremoso" fetchpriority="high">
+            <figcaption>Brownies especiais</figcaption>
+          </figure>
+          <figure class="hero-photo hero-photo-cookie">
+            <img src="assets/images/cookie-ninho-com-nutella-01.png" alt="Cookie de Ninho com Nutella" fetchpriority="high">
+          </figure>
+          <figure class="hero-photo hero-photo-savory">
+            <img src="assets/images/pao-recheado-01.png" alt="Pão recheado artesanal" fetchpriority="high">
+          </figure>
+          <div class="hero-badge" aria-hidden="true">feito com<br><strong>amor</strong> ♥</div>
         </div>
       </div>
     </section>
 
-    <section class="trust-strip" aria-label="Diferenciais">
+    <section class="trust-strip" aria-label="Informações rápidas">
       <div class="container trust-grid">
-        <div><strong>Feito artesanalmente</strong><span>Carinho em cada pedido</span></div>
-        <div><strong>Pedido direto</strong><span>Atendimento pelo WhatsApp</span></div>
-        <div><strong>Em Fortaleza</strong><span>Consulte retirada e entrega</span></div>
+        <div><strong>Doces e salgados</strong><span>Opções para diferentes momentos</span></div>
+        <div><strong>Encomendas</strong><span>Consulte prazo e disponibilidade</span></div>
+        <div><strong>Apresentação cuidadosa</strong><span>Produtos preparados para servir ou presentear</span></div>
+        <div><strong>Contato direto</strong><span>WhatsApp e Instagram</span></div>
       </div>
     </section>
 
-    <section class="section" id="destaques">
+    <section class="section featured-section" id="mais-pedidos">
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Destaques da Sarah</p>
-            <h2>Escolha sua próxima delícia</h2>
+            <p class="eyebrow"><span></span> Vitrine da Sarah</p>
+            <h2>Comece pelos mais irresistíveis</h2>
           </div>
-          <p>As opções podem variar conforme a produção. Consulte sabores, tamanhos, quantidades e prazo para encomenda.</p>
+          <p>Uma seleção visual com sabores marcantes e opções que representam bem a variedade da Doçura da Sarah.</p>
         </div>
 
-        <div class="product-grid">
-          <article class="product-card product-card-featured">
-            <img src="assets/images/hero-brownie-castanha.webp" alt="Brownie de castanha com casquinha crocante" width="856" height="852" loading="lazy">
-            <div class="product-body">
-              <span class="tag">Queridinho</span>
+        <div class="featured-grid">
+          <article class="featured-card featured-card-large">
+            <div class="featured-image">
+              <img src="assets/images/brownie-de-castanha-01.png" alt="Brownie de chocolate com castanhas" loading="lazy">
+              <span class="photo-label">Muito chocolate</span>
+            </div>
+            <div class="featured-copy">
+              <p class="product-category">Brownies</p>
               <h3>Brownie de castanha</h3>
-              <p>Chocolate intenso, interior úmido e castanhas que deixam cada pedaço ainda mais especial.</p>
-              <a class="text-link whatsapp-product" data-product="Brownie de castanha" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Consultar e pedir →</a>
+              <p>Chocolate intenso, casquinha delicada e castanhas que acrescentam textura a cada pedaço.</p>
+              <a class="text-link whatsapp-product" data-product="Brownie de castanha" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Consultar este produto <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
-          <article class="product-card">
-            <img src="assets/images/mini-brownies.webp" alt="Mini brownies decorados com cobertura branca" width="859" height="856" loading="lazy">
-            <div class="product-body">
-              <h3>Mini brownies</h3>
-              <p>Pequenos no tamanho e grandes no sabor. Uma ótima opção para festas, lembranças e caixas especiais.</p>
-              <a class="text-link whatsapp-product" data-product="Mini brownies" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Consultar e pedir →</a>
+          <article class="featured-card">
+            <div class="featured-image">
+              <img src="assets/images/cookie-ninho-com-nutella-01.png" alt="Cookie de Ninho com Nutella" loading="lazy">
+            </div>
+            <div class="featured-copy">
+              <p class="product-category">Cookies</p>
+              <h3>Cookie de Ninho com Nutella</h3>
+              <p>Uma combinação cremosa e generosa para quem gosta de sabores bem marcantes.</p>
+              <a class="text-link whatsapp-product" data-product="Cookie de Ninho com Nutella" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Consultar <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
-          <article class="product-card">
-            <img src="assets/images/pao-recheado.webp" alt="Pão recheado dourado e assado" width="673" height="855" loading="lazy">
-            <div class="product-body">
+          <article class="featured-card">
+            <div class="featured-image">
+              <img src="assets/images/bolo-fofo-amanteigado-01.png" alt="Bolo fofo amanteigado" loading="lazy">
+            </div>
+            <div class="featured-copy">
+              <p class="product-category">Bolos</p>
+              <h3>Bolo fofo amanteigado</h3>
+              <p>Leve, macio e com aquele sabor acolhedor que combina perfeitamente com café.</p>
+              <a class="text-link whatsapp-product" data-product="Bolo fofo amanteigado" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Consultar <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="featured-card">
+            <div class="featured-image">
+              <img src="assets/images/pao-recheado-02.png" alt="Pão recheado de frango com Catupiry" loading="lazy">
+            </div>
+            <div class="featured-copy">
+              <p class="product-category">Salgados</p>
               <h3>Pão recheado com Catupiry</h3>
-              <p>Massa macia, acabamento dourado e recheio cremoso para compartilhar ou aproveitar em família.</p>
-              <a class="text-link whatsapp-product" data-product="Pão recheado com Catupiry" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Consultar e pedir →</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <img src="assets/images/ovo-casca-brownie.webp" alt="Ovo com casca de brownie decorado com mini brownies" width="697" height="856" loading="lazy">
-            <div class="product-body">
-              <h3>Ovo com casca de brownie</h3>
-              <p>Uma criação especial para presentear: casca de brownie, recheio cremoso e acabamento caprichado.</p>
-              <a class="text-link whatsapp-product" data-product="Ovo com casca de brownie" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Consultar e pedir →</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <img src="assets/images/mini-pudim-gourmet.webp" alt="Mini pudim gourmet em embalagem com rótulo da Doçura da Sarah" width="674" height="856" loading="lazy">
-            <div class="product-body">
-              <h3>Mini pudim gourmet</h3>
-              <p>Sobremesa cremosa em tamanho individual, preparada e embalada com cuidado.</p>
-              <a class="text-link whatsapp-product" data-product="Mini pudim gourmet" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Consultar e pedir →</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <img src="assets/images/brownies-embalados.webp" alt="Brownies embalados individualmente com rótulo da Doçura da Sarah" width="856" height="858" loading="lazy">
-            <div class="product-body">
-              <h3>Brownie tradicional</h3>
-              <p>Casquinha delicada, massa chocolatuda e embalagem individual para facilitar o pedido e o presente.</p>
-              <a class="text-link whatsapp-product" data-product="Brownie tradicional" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Consultar e pedir →</a>
+              <p>Massa dourada e macia com recheio cremoso, ideal para dividir em família.</p>
+              <a class="text-link whatsapp-product" data-product="Pão recheado com frango e Catupiry" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Consultar <span aria-hidden="true">→</span></a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="cardapio">
+    <section class="section catalog-section" id="cardapio">
       <div class="container">
-        <div class="section-heading compact">
+        <div class="section-heading section-heading-catalog">
           <div>
-            <p class="eyebrow">Mais opções</p>
-            <h2>Cardápio da Doçura</h2>
+            <p class="eyebrow"><span></span> Catálogo visual</p>
+            <h2>Escolha por categoria</h2>
           </div>
-          <p>Toque em qualquer produto para perguntar diretamente pelo WhatsApp.</p>
+          <p>Use os filtros para encontrar seu produto. Os valores e a disponibilidade são confirmados diretamente pelo WhatsApp.</p>
         </div>
 
-        <div class="menu-grid">
-          <button class="menu-item whatsapp-product" data-product="Bolo caseiro"><span>Bolo caseiro</span><small>Consultar</small></button>
-          <button class="menu-item whatsapp-product" data-product="Torta de frango"><span>Torta de frango</span><small>Consultar</small></button>
-          <button class="menu-item whatsapp-product" data-product="Cookie com recheio de brownie"><span>Cookie com recheio de brownie</span><small>Consultar</small></button>
-          <button class="menu-item whatsapp-product" data-product="Brownie de brigadeiro"><span>Brownie de brigadeiro</span><small>Consultar</small></button>
-          <button class="menu-item whatsapp-product" data-product="Cookie de Ninho com Nutella"><span>Cookie de Ninho com Nutella</span><small>Consultar</small></button>
-          <button class="menu-item whatsapp-product" data-product="Bem-casado de Ninho"><span>Bem-casado de Ninho</span><small>Consultar</small></button>
-          <button class="menu-item whatsapp-product" data-product="Bolo fofo amanteigado"><span>Bolo fofo amanteigado</span><small>Consultar</small></button>
-          <button class="menu-item whatsapp-product" data-product="Brownie de Ovomaltine"><span>Brownie de Ovomaltine</span><small>Consultar</small></button>
-          <button class="menu-item whatsapp-product" data-product="Brownie de castanha"><span>Brownie de castanha</span><small>Consultar</small></button>
-          <button class="menu-item whatsapp-product" data-product="Ovo com casca de brownie"><span>Ovo com casca de brownie</span><small>Consultar</small></button>
-          <button class="menu-item whatsapp-product" data-product="Mini brownie"><span>Mini brownie</span><small>Consultar</small></button>
-          <button class="menu-item whatsapp-product" data-product="Mini pudim gourmet"><span>Mini pudim gourmet</span><small>Consultar</small></button>
+        <div class="catalog-filters" role="group" aria-label="Filtrar produtos por categoria">
+          <button class="filter-button active" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+          <button class="filter-button" type="button" data-filter="brownies" aria-pressed="false">Brownies</button>
+          <button class="filter-button" type="button" data-filter="cookies" aria-pressed="false">Cookies e doces</button>
+          <button class="filter-button" type="button" data-filter="bolos" aria-pressed="false">Bolos e sobremesas</button>
+          <button class="filter-button" type="button" data-filter="salgados" aria-pressed="false">Salgados</button>
+        </div>
+
+        <div class="catalog-grid" aria-live="polite">
+          <article class="catalog-card" data-category="brownies">
+            <div class="catalog-image"><img src="assets/images/brownie-tradicional-01.png" alt="Brownie tradicional" loading="lazy"></div>
+            <div class="catalog-copy"><span>Brownies</span><h3>Brownie tradicional</h3><p>Casquinha delicada e massa chocolatuda.</p><a class="whatsapp-product" data-product="Brownie tradicional" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="brownies">
+            <div class="catalog-image"><img src="assets/images/brownie-de-brigadeiro-02.png" alt="Brownie de brigadeiro" loading="lazy"></div>
+            <div class="catalog-copy"><span>Brownies</span><h3>Brownie de brigadeiro</h3><p>Chocolate com acabamento cremoso de brigadeiro.</p><a class="whatsapp-product" data-product="Brownie de brigadeiro" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="brownies">
+            <div class="catalog-image"><img src="assets/images/brownie-de-ninho-02.png" alt="Brownie de Ninho" loading="lazy"></div>
+            <div class="catalog-copy"><span>Brownies</span><h3>Brownie de Ninho</h3><p>Chocolate intenso com recheio claro e cremoso.</p><a class="whatsapp-product" data-product="Brownie de Ninho" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="brownies">
+            <div class="catalog-image"><img src="assets/images/brownie-de-ovomaltine-01.png" alt="Brownie de Ovomaltine" loading="lazy"></div>
+            <div class="catalog-copy"><span>Brownies</span><h3>Brownie de Ovomaltine</h3><p>Sabor de chocolate com uma camada crocante.</p><a class="whatsapp-product" data-product="Brownie de Ovomaltine" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="brownies">
+            <div class="catalog-image"><img src="assets/images/brownie-de-castanha-02.png" alt="Brownie de castanha" loading="lazy"></div>
+            <div class="catalog-copy"><span>Brownies</span><h3>Brownie de castanha</h3><p>Castanhas aparentes e contraste de texturas.</p><a class="whatsapp-product" data-product="Brownie de castanha" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="brownies">
+            <div class="catalog-image"><img src="assets/images/casca-de-brownie-01.png" alt="Ovo com casca de brownie" loading="lazy"></div>
+            <div class="catalog-copy"><span>Especiais</span><h3>Ovo com casca de brownie</h3><p>Uma opção especial para presentear e surpreender.</p><a class="whatsapp-product" data-product="Ovo com casca de brownie" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="cookies">
+            <div class="catalog-image"><img src="assets/images/cookie-com-gotas-de-chocolate-01.png" alt="Cookie com gotas de chocolate" loading="lazy"></div>
+            <div class="catalog-copy"><span>Cookies</span><h3>Cookie com gotas de chocolate</h3><p>Massa artesanal com muitas gotas de chocolate.</p><a class="whatsapp-product" data-product="Cookie com gotas de chocolate" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="cookies">
+            <div class="catalog-image"><img src="assets/images/cookie-recheado-com-brownie-01.png" alt="Cookie recheado com brownie" loading="lazy"></div>
+            <div class="catalog-copy"><span>Cookies</span><h3>Cookie recheado com brownie</h3><p>Cookie e brownie reunidos em uma única sobremesa.</p><a class="whatsapp-product" data-product="Cookie recheado com brownie" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="cookies">
+            <div class="catalog-image"><img src="assets/images/cookie-ninho-com-nutella-01.png" alt="Cookie de Ninho com Nutella" loading="lazy"></div>
+            <div class="catalog-copy"><span>Cookies</span><h3>Cookie de Ninho com Nutella</h3><p>Recheio generoso em uma combinação muito cremosa.</p><a class="whatsapp-product" data-product="Cookie de Ninho com Nutella" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="cookies">
+            <div class="catalog-image"><img src="assets/images/bem-casado-de-ninho-01.png" alt="Bem-casado de Ninho" loading="lazy"></div>
+            <div class="catalog-copy"><span>Doces</span><h3>Bem-casado de Ninho</h3><p>Delicado e indicado para festas, lembranças e presentes.</p><a class="whatsapp-product" data-product="Bem-casado de Ninho" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="bolos">
+            <div class="catalog-image"><img src="assets/images/bolo-caseiro-01.png" alt="Bolo caseiro" loading="lazy"></div>
+            <div class="catalog-copy"><span>Bolos</span><h3>Bolo caseiro</h3><p>O sabor simples e acolhedor que combina com qualquer café.</p><a class="whatsapp-product" data-product="Bolo caseiro" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="bolos">
+            <div class="catalog-image"><img src="assets/images/bolo-fofo-amanteigado-01.png" alt="Bolo fofo amanteigado" loading="lazy"></div>
+            <div class="catalog-copy"><span>Bolos</span><h3>Bolo fofo amanteigado</h3><p>Massa leve, macia e com sabor amanteigado.</p><a class="whatsapp-product" data-product="Bolo fofo amanteigado" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="bolos">
+            <div class="catalog-image"><img src="assets/images/bolo-mole-01.png" alt="Bolo mole" loading="lazy"></div>
+            <div class="catalog-copy"><span>Bolos</span><h3>Bolo mole</h3><p>Cremoso, macio e servido em fatias generosas.</p><a class="whatsapp-product" data-product="Bolo mole" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="bolos">
+            <div class="catalog-image"><img src="assets/images/mini-pudim-gourmet-01.png" alt="Mini pudim gourmet" loading="lazy"></div>
+            <div class="catalog-copy"><span>Sobremesas</span><h3>Mini pudim gourmet</h3><p>Porção individual, cremosa e pronta para servir.</p><a class="whatsapp-product" data-product="Mini pudim gourmet" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="salgados">
+            <div class="catalog-image"><img src="assets/images/pao-recheado-03.png" alt="Pão recheado de frango com Catupiry" loading="lazy"></div>
+            <div class="catalog-copy"><span>Salgados</span><h3>Pão recheado com Catupiry</h3><p>Massa macia e recheio cremoso para compartilhar.</p><a class="whatsapp-product" data-product="Pão recheado com frango e Catupiry" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
+
+          <article class="catalog-card" data-category="salgados">
+            <div class="catalog-image"><img src="assets/images/torta-de-frango-01.png" alt="Torta de frango" loading="lazy"></div>
+            <div class="catalog-copy"><span>Salgados</span><h3>Torta de frango</h3><p>Uma opção prática para o lanche e para refeições rápidas.</p><a class="whatsapp-product" data-product="Torta de frango" href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir informações</a></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="como-pedir">
+    <section class="section offers-section" id="ofertas">
       <div class="container">
-        <div class="section-heading compact">
+        <div class="section-heading offers-heading">
           <div>
-            <p class="eyebrow">Simples e direto</p>
-            <h2>Como fazer seu pedido</h2>
+            <p class="eyebrow"><span></span> Ofertas divulgadas</p>
+            <h2>Promoções que merecem destaque</h2>
+          </div>
+          <p>As artes mostram valores já divulgados pela marca. Confirme preço, tamanho e disponibilidade antes de concluir o pedido.</p>
+        </div>
+
+        <div class="offers-scroller" aria-label="Ofertas da Doçura da Sarah">
+          <a class="offer-card whatsapp-product" data-product="Pão recheado de frango com Catupiry" href="https://wa.me/5585988208245" target="_blank" rel="noopener">
+            <img src="assets/images/promo-pao-recheado-catupiry-01.png" alt="Oferta de pão recheado de frango com Catupiry" loading="lazy">
+          </a>
+          <a class="offer-card whatsapp-product" data-product="Brownie de Ninho" href="https://wa.me/5585988208245" target="_blank" rel="noopener">
+            <img src="assets/images/promo-brownie-de-ninho-01.jpeg" alt="Oferta de brownie de Ninho" loading="lazy">
+          </a>
+          <a class="offer-card whatsapp-product" data-product="Bolo mole" href="https://wa.me/5585988208245" target="_blank" rel="noopener">
+            <img src="assets/images/promo-bolo-mole-01.jpeg" alt="Oferta de bolo mole" loading="lazy">
+          </a>
+          <a class="offer-card whatsapp-product" data-product="Torta de frango com Guaraná" href="https://wa.me/5585988208245" target="_blank" rel="noopener">
+            <img src="assets/images/promo-torta-de-frango-01.jpeg" alt="Oferta de torta de frango com Guaraná" loading="lazy">
+          </a>
+          <a class="offer-card whatsapp-product" data-product="Bolo mesclado" href="https://wa.me/5585988208245" target="_blank" rel="noopener">
+            <img src="assets/images/promo-bolo-mesclado-01.jpeg" alt="Oferta de bolo mesclado" loading="lazy">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section occasions-section">
+      <div class="container">
+        <div class="section-heading centered-heading">
+          <div>
+            <p class="eyebrow"><span></span> Para cada momento</p>
+            <h2>Não é só escolher um sabor. É escolher a ocasião.</h2>
+          </div>
+          <p>A variedade de produtos permite montar pedidos para consumir em casa, compartilhar, presentear ou servir em eventos.</p>
+        </div>
+
+        <div class="occasion-grid">
+          <article class="occasion-card">
+            <img src="assets/images/bolo-caseiro-embalado-01.png" alt="Bolo caseiro embalado" loading="lazy">
+            <div><span>Para o café</span><h3>Bolos com sabor de casa</h3><p>Opções simples, macias e ideais para acompanhar uma bebida quente.</p></div>
+          </article>
+          <article class="occasion-card">
+            <img src="assets/images/mini-brownies-embalados-01.png" alt="Mini brownies embalados" loading="lazy">
+            <div><span>Para festas</span><h3>Miniaturas e encomendas</h3><p>Produtos pequenos e organizados para mesas, lembranças e caixas.</p></div>
+          </article>
+          <article class="occasion-card">
+            <img src="assets/images/cookies-embalados-01.png" alt="Cookies embalados individualmente" loading="lazy">
+            <div><span>Para presentear</span><h3>Bonito por fora, gostoso por dentro</h3><p>Embalagens individuais que facilitam presentes e pequenas lembranças.</p></div>
+          </article>
+          <article class="occasion-card">
+            <img src="assets/images/pao-recheado-01.png" alt="Pão recheado dourado" loading="lazy">
+            <div><span>Para compartilhar</span><h3>Lanches salgados</h3><p>Pão recheado e torta para dividir em família ou completar uma reunião.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section">
+      <div class="container process-grid">
+        <div class="process-copy">
+          <p class="eyebrow"><span></span> Produção real</p>
+          <h2>Feito em pequenas etapas, com atenção aos detalhes</h2>
+          <p>As fotos de produção e embalagem mostram o cuidado por trás de cada pedido: preparo, organização, finalização e apresentação.</p>
+          <ul>
+            <li>Produção artesanal</li>
+            <li>Produtos organizados e embalados</li>
+            <li>Atendimento próximo para combinar o pedido</li>
+          </ul>
+          <a class="text-link" href="https://www.instagram.com/docuradasarah/" target="_blank" rel="noopener">Acompanhar pelo Instagram <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="process-gallery">
+          <figure class="process-large"><img src="assets/images/producao-mini-brownies-01.png" alt="Produção de mini brownies" loading="lazy"></figure>
+          <figure><img src="assets/images/mini-brownies-na-forma-01.png" alt="Mini brownies organizados em forma" loading="lazy"></figure>
+          <figure><img src="assets/images/producao-forno-tortas-01.png" alt="Tortas sendo preparadas no forno" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section order-section" id="como-pedir">
+      <div class="container">
+        <div class="section-heading centered-heading">
+          <div>
+            <p class="eyebrow"><span></span> Pedido simples</p>
+            <h2>Do catálogo para o WhatsApp em três passos</h2>
           </div>
         </div>
 
         <ol class="steps">
-          <li>
-            <span class="step-number">1</span>
-            <div><strong>Escolha o que deseja</strong><p>Veja os destaques ou consulte outras opções do cardápio.</p></div>
-          </li>
-          <li>
-            <span class="step-number">2</span>
-            <div><strong>Chame no WhatsApp</strong><p>Informe o produto, a quantidade desejada e a data do pedido.</p></div>
-          </li>
-          <li>
-            <span class="step-number">3</span>
-            <div><strong>Combine os detalhes</strong><p>Confirme valores, prazo, pagamento, retirada ou entrega em Fortaleza.</p></div>
-          </li>
+          <li><span>01</span><div><h3>Escolha os produtos</h3><p>Navegue pelas categorias e selecione os itens que chamaram sua atenção.</p></div></li>
+          <li><span>02</span><div><h3>Informe quantidade e data</h3><p>Envie pelo WhatsApp o que deseja, a quantidade e quando precisa.</p></div></li>
+          <li><span>03</span><div><h3>Confirme os detalhes</h3><p>Combine disponibilidade, valor, pagamento, retirada ou entrega.</p></div></li>
         </ol>
-      </div>
-    </section>
 
-    <section class="section section-gallery" aria-labelledby="galeria-titulo">
-      <div class="container">
-        <div class="section-heading compact">
+        <div class="order-banner">
           <div>
-            <p class="eyebrow">Da produção à embalagem</p>
-            <h2 id="galeria-titulo">Feito com cuidado de verdade</h2>
+            <span>Atendimento em Fortaleza-CE</span>
+            <h3>Já sabe qual vai ser o próximo pedido?</h3>
           </div>
-        </div>
-
-        <div class="gallery">
-          <figure class="gallery-large">
-            <img src="assets/images/brownies-producao.webp" alt="Brownies recém-preparados organizados para corte" width="851" height="847" loading="lazy">
-          </figure>
-          <figure>
-            <img src="assets/images/brownies-embalados.webp" alt="Brownies embalados para entrega" width="856" height="858" loading="lazy">
-          </figure>
-          <figure>
-            <img src="assets/images/mini-brownies.webp" alt="Mini brownies organizados em forminhas" width="859" height="856" loading="lazy">
-          </figure>
+          <a class="button button-light whatsapp-link" data-message="Olá, Sarah! Vi o catálogo no site e gostaria de fazer um pedido." href="https://wa.me/5585988208245" target="_blank" rel="noopener">Conversar com a Sarah</a>
         </div>
       </div>
     </section>
 
-    <section class="section contact-section" id="contato">
-      <div class="container contact-card">
+    <section class="section faq-section">
+      <div class="container faq-grid">
         <div>
-          <p class="eyebrow">Seu pedido começa aqui</p>
-          <h2>Qual delícia combina com o seu momento?</h2>
-          <p>Converse diretamente com a Doçura da Sarah e consulte opções, valores e disponibilidade.</p>
-          <div class="contact-meta">
+          <p class="eyebrow"><span></span> Antes de pedir</p>
+          <h2>Dúvidas rápidas</h2>
+          <p>Como a produção é artesanal, detalhes como disponibilidade, valores e prazo são confirmados diretamente pelo WhatsApp.</p>
+        </div>
+        <div class="faq-list">
+          <details><summary>Os preços do site estão sempre atualizados?</summary><p>As artes promocionais reproduzem valores já divulgados. Confirme o preço atual antes de concluir o pedido.</p></details>
+          <details><summary>Preciso encomendar com antecedência?</summary><p>O prazo depende do produto, da quantidade e da data. Consulte a disponibilidade pelo WhatsApp.</p></details>
+          <details><summary>Há retirada ou entrega?</summary><p>As opções, regiões atendidas e eventuais taxas são combinadas diretamente no atendimento.</p></details>
+          <details><summary>Posso pedir para festa ou lembrança?</summary><p>Sim. Informe a ocasião, a quantidade e a data para consultar as opções mais adequadas.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="contato">
+      <div class="container final-grid">
+        <div>
+          <p class="eyebrow light"><span></span> Doçura da Sarah</p>
+          <h2>Feito com amor. Escolhido com vontade.</h2>
+          <p>Consulte o cardápio, valores e disponibilidade pelo WhatsApp ou acompanhe as novidades no Instagram.</p>
+          <div class="final-actions">
+            <a class="button button-light whatsapp-link" data-message="Olá, Sarah! Vim pelo site da Doçura da Sarah e gostaria de consultar o cardápio." href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
             <a href="https://www.instagram.com/docuradasarah/" target="_blank" rel="noopener">@docuradasarah</a>
-            <span>Fortaleza — CE</span>
           </div>
         </div>
-        <a class="button button-light whatsapp-link" data-message="Olá! Vim pelo site da Doçura da Sarah e gostaria de fazer um pedido." href="https://wa.me/5585988208245" target="_blank" rel="noopener">
-          Conversar no WhatsApp
-        </a>
+        <img src="assets/images/logo-docura-da-sarah-01.png" alt="Doçura da Sarah — feito com amor" loading="lazy">
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-content">
-      <div>
-        <strong>Doçura da Sarah</strong>
-        <span>Feito com amor em Fortaleza.</span>
+    <div class="container footer-grid">
+      <div class="brand footer-brand">
+        <img src="assets/images/logo-docura-da-sarah-01.png" alt="" width="52" height="52">
+        <span><strong>Doçura da Sarah</strong><small>Fortaleza-CE</small></span>
       </div>
-      <div>
-        <a href="https://www.instagram.com/docuradasarah/" target="_blank" rel="noopener">Instagram</a>
-        <a class="whatsapp-link" data-message="Olá! Vim pelo site da Doçura da Sarah." href="https://wa.me/5585988208245" target="_blank" rel="noopener">WhatsApp</a>
-        <span>© <span id="year"></span></span>
+      <div class="footer-links">
+        <a class="whatsapp-link" data-message="Olá, Sarah! Vim pelo site da Doçura da Sarah." href="https://wa.me/5585988208245" target="_blank" rel="noopener">WhatsApp: (85) 98820-8245</a>
+        <a href="https://www.instagram.com/docuradasarah/" target="_blank" rel="noopener">Instagram: @docuradasarah</a>
       </div>
+      <p>© <span id="year"></span> Doçura da Sarah.</p>
     </div>
   </footer>
 
-  <a class="whatsapp-float whatsapp-link" data-message="Olá! Vim pelo site da Doçura da Sarah e gostaria de fazer um pedido." href="https://wa.me/5585988208245" target="_blank" rel="noopener" aria-label="Fazer pedido pelo WhatsApp">
-    <svg aria-hidden="true" viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12.04 2a9.84 9.84 0 0 0-8.4 14.95L2 22l5.2-1.62A9.93 9.93 0 1 0 12.04 2Zm0 17.98a8.02 8.02 0 0 1-4.09-1.12l-.29-.17-3.09.96.99-3-.19-.31A7.96 7.96 0 1 1 12.04 19.98Zm4.38-5.98c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.19-.71-.64-1.2-1.42-1.34-1.66-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
-    <span>Pedir</span>
+  <a class="whatsapp-float whatsapp-link" data-message="Olá, Sarah! Vim pelo site da Doçura da Sarah e gostaria de fazer um pedido." href="https://wa.me/5585988208245" target="_blank" rel="noopener" aria-label="Fazer pedido pelo WhatsApp">
+    <span aria-hidden="true">●</span> Fazer pedido
   </a>
+
+  <div class="mobile-order-bar">
+    <a class="whatsapp-link" data-message="Olá, Sarah! Vim pelo site da Doçura da Sarah e gostaria de fazer um pedido." href="https://wa.me/5585988208245" target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+  </div>
 
   <script src="script.js"></script>
 </body>
