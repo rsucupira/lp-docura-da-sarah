@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rsucupira.github.io/lp-docura-da-sarah/sitemap.xml
+Sitemap: https://docura.uebey.com/sitemap.xml
