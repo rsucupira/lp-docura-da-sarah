@@ -1,0 +1,52 @@
+name: Atualizar domínio oficial Uebey
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-uebey-domain.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-domain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Atualizar URLs públicas
+        shell: bash
+        run: |
+          python <<'PY'
+          from pathlib import Path
+
+          old = 'https://rsucupira.github.io/lp-docura-da-sarah/'
+          new = 'https://docura.uebey.com/'
+
+          for filename in ['index.html', 'sitemap.xml', 'robots.txt']:
+              p = Path(filename)
+              text = p.read_text(encoding='utf-8')
+              updated = text.replace(old, new)
+              if updated == text:
+                  print(f'Nenhuma substituição necessária em {filename}')
+              else:
+                  p.write_text(updated, encoding='utf-8')
+                  print(f'Atualizado: {filename}')
+          PY
+
+      - name: Publicar alteração
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "Nada para publicar."
+            exit 0
+          fi
+          git config user.name "Rodrigo Sucupira"
+          git config user.email "64866757+rsucupira@users.noreply.github.com"
+          git add index.html sitemap.xml robots.txt
+          git commit -m "Atualizar domínio oficial para docura.uebey.com"
+          git push origin main
