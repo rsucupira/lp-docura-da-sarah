@@ -71,4 +71,38 @@
 
   const year = document.querySelector("#year");
   if (year) year.textContent = new Date().getFullYear();
+
+  // Assinatura discreta Uebey no rodapé
+  const footerGrid = document.querySelector(".site-footer .footer-grid");
+  if (footerGrid && !footerGrid.querySelector(".uebey-credit")) {
+    const credit = document.createElement("a");
+    credit.className = "uebey-credit";
+    credit.href = "https://uebey.com";
+    credit.target = "_blank";
+    credit.rel = "noopener noreferrer";
+    credit.setAttribute("aria-label", "Desenvolvido por Uebey");
+    credit.innerHTML = `
+      <span class="uebey-credit__icon" aria-hidden="true">
+        <svg viewBox="0 0 30 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 3v17c0 8 4.6 13 11 13s11-5 11-13V3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M8 5v15c0 5.5 2.9 9 7 9s7-3.5 7-9V5" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".76"/>
+          <path d="M12 7v13c0 2.8 1.2 4.7 3 4.7s3-1.9 3-4.7V7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity=".52"/>
+        </svg>
+      </span>
+      <span>Desenvolvido por <strong>Uebey</strong></span>`;
+    footerGrid.appendChild(credit);
+
+    const style = document.createElement("style");
+    style.textContent = `
+      .site-footer .footer-grid{grid-template-columns:1fr auto auto auto}
+      .uebey-credit{justify-self:end;display:inline-flex;align-items:center;gap:7px;color:rgba(255,255,255,.62);font-size:.76rem;text-decoration:none;white-space:nowrap;opacity:.84;transition:color .2s ease,opacity .2s ease,transform .2s ease}
+      .uebey-credit__icon{width:16px;height:19px;display:inline-flex;color:var(--pink);filter:drop-shadow(0 0 7px rgba(233,77,130,.16))}
+      .uebey-credit__icon svg{width:100%;height:100%;display:block}
+      .uebey-credit strong{color:rgba(255,255,255,.84);font-weight:700;transition:color .2s ease}
+      .uebey-credit:hover{color:#fff;opacity:1;transform:translateY(-1px)}
+      .uebey-credit:hover strong{color:#ff8fb5}
+      @media(max-width:900px){.site-footer .footer-grid{grid-template-columns:1fr}.uebey-credit{justify-self:end;margin-top:4px}}
+    `;
+    document.head.appendChild(style);
+  }
 })();
