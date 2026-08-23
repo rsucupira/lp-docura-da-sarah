@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#fff7f1">
+<title>Doçura da Sarah — Flux Living Lab</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+:root{
+  --pink:#e94d82;--pink2:#b9235b;--pinkSoft:#ffe8f0;--cream:#fff8f2;--cream2:#fff2e7;
+  --brown:#3b1f1a;--brown2:#765950;--white:#fff;--line:rgba(59,31,26,.12);
+  --living:3;--speed:1;--split:50%;--radius:28px;--shadow:0 24px 70px rgba(76,32,39,.16)
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--brown);font-family:'DM Sans',system-ui,sans-serif;line-height:1.55}button,a{font:inherit}button{color:inherit}img{display:block;max-width:100%}a{color:inherit}
+.labbar{position:sticky;top:0;z-index:100;background:rgba(255,248,242,.93);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.labbar-in{width:min(1400px,calc(100% - 28px));min-height:72px;margin:auto;display:flex;align-items:center;gap:16px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;white-space:nowrap}.brand img{width:45px;height:45px;border-radius:50%;box-shadow:0 8px 22px #e94d8230}.brand b{font-family:'Playfair Display',serif;font-size:1.04rem}.brand small{display:block;color:var(--pink2);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+.labnav{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.labnav button,.labnav a{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;font-size:.78rem;font-weight:800;text-decoration:none;cursor:pointer}.labnav button:hover,.labnav button.active{background:var(--brown);border-color:var(--brown);color:#fff}.labnav .back{background:transparent}
+.control-panel{position:fixed;z-index:95;left:18px;bottom:18px;width:min(610px,calc(100% - 36px));padding:13px;background:rgba(59,31,26,.94);color:#fff;border-radius:22px;box-shadow:0 20px 55px rgba(0,0,0,.25);backdrop-filter:blur(16px)}.controls{display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:10px;align-items:end}.ctrl label{display:block;margin:0 0 5px;color:#f2c9d7;font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.seg{display:flex;gap:4px}.seg button,.pause{min-height:34px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:#fff;border-radius:10px;padding:7px 9px;font-size:.71rem;font-weight:800;cursor:pointer}.seg button.active,.seg button:hover,.pause:hover{background:var(--pink);border-color:var(--pink)}.ctrl select{width:100%;height:34px;border:0;border-radius:10px;padding:0 9px;background:#fff;color:var(--brown);font:800 .73rem 'DM Sans',sans-serif}.lab-hint{margin-top:8px;color:rgba(255,255,255,.62);font-size:.68rem}
+.hero{position:relative;min-height:calc(100vh - 72px);overflow:hidden;background:var(--cream)}.hero-grid{display:grid;grid-template-columns:var(--split) calc(100% - var(--split));min-height:calc(100vh - 72px)}.copy{position:relative;z-index:5;display:flex;align-items:center;padding:clamp(40px,6vw,90px)}.copy-in{max-width:700px}.eyebrow{display:flex;gap:9px;align-items:center;margin-bottom:16px;color:var(--pink2);font-size:.73rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.eyebrow:before{content:'';width:28px;height:2px;background:currentColor}.copy h1{font:800 clamp(3.2rem,6vw,6.6rem)/.92 'Playfair Display',serif;letter-spacing:-.055em;margin:0 0 22px;max-width:770px}.copy h1 em{font-style:normal;color:var(--pink2)}.lead{max-width:650px;color:var(--brown2);font-size:clamp(1rem,1.6vw,1.2rem);margin:0 0 28px}.actions{display:flex;flex-wrap:wrap;gap:10px}.cta{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 22px;border-radius:999px;background:var(--pink2);color:#fff;font-weight:800;text-decoration:none;box-shadow:0 12px 28px #b9235b30}.cta.alt{background:#fff;color:var(--brown);border:1px solid var(--line);box-shadow:none}.micro{display:flex;gap:12px 20px;flex-wrap:wrap;margin-top:26px;color:#846860;font-size:.79rem;font-weight:700}.micro span:before{content:'♥';color:var(--pink);margin-right:6px}
+.stage{position:relative;min-width:0;overflow:hidden;background:#f4d4df}.stage:before{content:'';position:absolute;inset:0;z-index:20;pointer-events:none;background:linear-gradient(90deg,rgba(255,248,242,.08),transparent 14%)}.split-handle{position:absolute;z-index:35;left:calc(var(--split) - 12px);top:50%;width:24px;height:74px;transform:translate(-50%,-50%);border:3px solid #fff;border-radius:999px;background:var(--pink);box-shadow:0 9px 25px #4c202744;cursor:ew-resize;opacity:.92}.split-handle:before,.split-handle:after{content:'';position:absolute;top:25px;width:3px;height:19px;border-radius:9px;background:#fff}.split-handle:before{left:6px}.split-handle:after{right:6px}
+.visual{position:absolute;inset:0;overflow:hidden}.visual img{position:absolute;width:100%;height:100%;object-fit:cover;will-change:transform,opacity,clip-path,filter}.visual .photo{opacity:0;transition:opacity .9s ease}.visual .photo.active{opacity:1}.wash{position:absolute;inset:0;z-index:8;pointer-events:none;mix-blend-mode:soft-light;background:radial-gradient(circle at 65% 20%,rgba(255,255,255,.55),transparent 28%),linear-gradient(135deg,transparent,rgba(233,77,130,.18))}.label{position:absolute;z-index:25;right:28px;bottom:28px;max-width:300px;padding:13px 16px;border-radius:16px;background:rgba(59,31,26,.84);backdrop-filter:blur(12px);color:#fff}.label small{display:block;color:#ffd2df;text-transform:uppercase;letter-spacing:.1em;font-size:.62rem;font-weight:800}.label b{display:block;margin-top:3px;font:700 1.15rem 'Playfair Display',serif}.pulse{position:absolute;z-index:15;inset:auto 7% 8% auto;width:132px;height:132px;border-radius:50%;border:1px solid rgba(255,255,255,.62);box-shadow:0 0 0 16px rgba(255,255,255,.12),0 0 0 34px rgba(255,255,255,.07);pointer-events:none}
+/* Motion family: gallery */
+body[data-mode="gallery"] .photo.active{animation:galleryMove calc(8s / var(--speed)) ease-in-out infinite alternate}@keyframes galleryMove{0%{transform:scale(1.02) translate3d(-1%,0,0)}100%{transform:scale(1.13) translate3d(3%,-2%,0)}}body[data-mode="gallery"] .pulse{animation:breath calc(4.2s / var(--speed)) ease-in-out infinite}@keyframes breath{50%{transform:scale(1.1);opacity:.45}}
+/* Motion family: conveyor */
+body[data-mode="conveyor"] .visual{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;background:#f7cbd9}.belt{display:none;position:absolute;inset:-12%;gap:12px;transform:rotate(-6deg);grid-template-columns:repeat(2,1fr)}.belt-col{display:flex;flex-direction:column;gap:12px}.belt img{position:relative!important;width:100%!important;height:34vh!important;border-radius:24px;object-fit:cover!important;box-shadow:0 15px 40px #4c202724}.belt-col.a{animation:beltA calc(15s / var(--speed)) linear infinite}.belt-col.b{animation:beltB calc(17s / var(--speed)) linear infinite reverse}@keyframes beltA{to{transform:translateY(-48%)}}@keyframes beltB{to{transform:translateY(-42%)}}body[data-mode="conveyor"] .belt{display:grid}body[data-mode="conveyor"] .photo{display:none}body[data-mode="conveyor"] .wash{background:linear-gradient(90deg,rgba(185,35,91,.12),transparent 30%,rgba(255,255,255,.25))}
+/* Motion family: wave */
+body[data-mode="wave"] .photo.active{clip-path:polygon(0 0,100% 0,100% 100%,0 100%);animation:waveCrop calc(8s / var(--speed)) ease-in-out infinite alternate, waveZoom calc(10s / var(--speed)) ease-in-out infinite alternate}@keyframes waveCrop{0%{clip-path:polygon(0 0,100% 0,100% 84%,82% 91%,65% 86%,48% 95%,27% 88%,0 96%)}100%{clip-path:polygon(0 6%,18% 1%,37% 9%,57% 2%,76% 10%,100% 4%,100% 100%,0 100%)}}@keyframes waveZoom{to{transform:scale(1.12) rotate(.4deg)}}body[data-mode="wave"] .stage{background:linear-gradient(160deg,#ffd8e4,#fff0e5)}body[data-mode="wave"] .stage:after{content:'';position:absolute;z-index:10;inset:0;background:radial-gradient(circle at 70% 20%,rgba(255,255,255,.8),transparent 18%);animation:glide calc(6s / var(--speed)) ease-in-out infinite alternate}@keyframes glide{to{transform:translate(-24%,28%)}}
+/* Motion family: orbit */
+body[data-mode="orbit"] .photo{display:none}.orbit{display:none;position:absolute;inset:0;background:linear-gradient(145deg,#541f2e,#b9235b)}body[data-mode="orbit"] .orbit{display:block}.orb{position:absolute;left:50%;top:50%;width:min(34vw,420px);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);border:1px solid rgba(255,255,255,.3);animation:spin calc(18s / var(--speed)) linear infinite}.orb:before,.orb:after{content:'';position:absolute;border:1px solid rgba(255,255,255,.22);border-radius:50%;inset:-18%;transform:rotate(28deg)}.orb:after{inset:-42%;transform:rotate(-24deg)}@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}.orb-img{position:absolute!important;width:46%!important;height:46%!important;border-radius:50%;object-fit:cover!important;box-shadow:0 22px 55px #0006}.orb-img.one{left:5%;top:4%}.orb-img.two{right:-4%;bottom:8%}.orb-img.three{left:25%;bottom:-18%}.orb-core{position:absolute;inset:25%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 10px rgba(255,255,255,.08),0 22px 50px #0005}.orb-core img{position:relative!important;width:100%!important;height:100%!important;object-fit:cover!important}
+/* Motion family: collage */
+body[data-mode="collage"] .photo{display:none}.collage{display:none;position:absolute;inset:0;background:linear-gradient(140deg,#f8ccd9,#ffefe3)}body[data-mode="collage"] .collage{display:block}.cardimg{position:absolute!important;width:48%!important;height:45%!important;object-fit:cover!important;border:7px solid #fff;border-radius:24px;box-shadow:var(--shadow);animation:floatCard calc(6s / var(--speed)) ease-in-out infinite alternate}.cardimg.c1{left:4%;top:5%;transform:rotate(-6deg)}.cardimg.c2{right:3%;top:21%;transform:rotate(5deg);animation-delay:-2s}.cardimg.c3{left:17%;bottom:2%;transform:rotate(2deg);animation-delay:-4s}@keyframes floatCard{to{translate:0 -17px;rotate:2deg}}
+/* Motion family: context */
+body[data-mode="context"] .photo.active{animation:contextMove calc(7s / var(--speed)) cubic-bezier(.45,0,.3,1) infinite alternate}@keyframes contextMove{to{transform:scale(1.14) translateX(2%)}}body[data-mode="context"][data-context="cafe"] .stage{background:#e7c8ad}body[data-mode="context"][data-context="festa"] .stage{background:#f2b9cf}body[data-mode="context"][data-context="presente"] .stage{background:#b9235b}
+/* living level */
+body[data-living="0"] .stage *{animation-play-state:paused!important}body[data-living="0"] .photo.active{transform:none!important}body[data-living="1"] .visual{--speed:.55}body[data-living="2"] .visual{--speed:.72}body[data-living="3"] .visual{--speed:1}body[data-living="4"] .visual{--speed:1.25}body[data-living="5"] .visual{--speed:1.55}body.paused .stage *{animation-play-state:paused!important}
+/* sections below hero */
+.bridge{background:var(--brown);color:#fff}.bridge-in{width:min(1200px,calc(100% - 40px));min-height:118px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr)}.bridge div{padding:24px;border-right:1px solid rgba(255,255,255,.13);display:flex;flex-direction:column;justify-content:center}.bridge div:last-child{border:0}.bridge b{font-family:'Playfair Display',serif;color:#ffd4e2}.bridge span{color:#d6b8b0;font-size:.78rem}
+.section{padding:100px 0;background:#fff}.section.alt{background:#fff8f2}.wrap{width:min(1200px,calc(100% - 40px));margin:auto}.section-head{display:grid;grid-template-columns:1fr .7fr;gap:60px;align-items:end;margin-bottom:38px}.section-head h2{font:800 clamp(2.4rem,5vw,4.5rem)/.98 'Playfair Display',serif;letter-spacing:-.04em;margin:0}.section-head p{color:var(--brown2);margin:0}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.product{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:var(--cream);transition:.25s}.product:hover{transform:translateY(-5px);box-shadow:0 18px 50px #4c202712}.product img{width:100%;height:250px;object-fit:cover}.product div{padding:18px}.product small{color:var(--pink2);font-weight:800;text-transform:uppercase;letter-spacing:.09em}.product h3{font:700 1.45rem 'Playfair Display',serif;margin:5px 0 8px}.product p{font-size:.84rem;color:var(--brown2);margin:0 0 14px}.product a{color:var(--pink2);font-size:.84rem;font-weight:800;text-decoration:none}.manifest{padding:90px 0;background:linear-gradient(135deg,#fff0f5,#fff7ef)}.manifest-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.manifest-card{padding:30px;border-radius:28px;background:#fff;border:1px solid var(--line)}.manifest-card h3{font:700 1.8rem 'Playfair Display',serif;margin:0 0 8px}.manifest-card p{margin:0;color:var(--brown2)}.manifest-card strong{color:var(--pink2)}
+@media(max-width:1000px){.controls{grid-template-columns:1fr 1fr}.labnav{display:none}.hero-grid{grid-template-columns:1fr;min-height:auto}.copy{min-height:66vh;padding:55px 28px 44px}.stage{min-height:62vh}.split-handle{display:none}.products{grid-template-columns:1fr 1fr}.bridge-in{grid-template-columns:1fr 1fr}.section-head,.manifest-grid{grid-template-columns:1fr}.control-panel{position:fixed;left:10px;bottom:10px;width:calc(100% - 20px)}}
+@media(max-width:600px){.labbar-in{min-height:62px}.brand img{width:40px;height:40px}.copy h1{font-size:3.3rem}.control-panel{padding:10px}.controls{grid-template-columns:1fr 1fr}.ctrl select{font-size:.68rem}.seg button{font-size:.65rem;padding:6px}.products{grid-template-columns:1fr}.bridge-in{grid-template-columns:1fr}.bridge div{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.section{padding:74px 0}.product img{height:290px}.label{right:16px;bottom:16px}.lab-hint{display:none}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.stage *{animation:none!important}.photo.active{transform:none!important}}
+</style>
+</head>
+<body data-mode="gallery" data-living="3" data-context="cafe">
+<header class="labbar">
+  <div class="labbar-in">
+    <a class="brand" href="../"><img src="../assets/images/logo-docura-da-sarah-01.png" alt=""><span><b>Doçura da Sarah</b><small>Flux Living Lab · UEBEY</small></span></a>
+    <nav class="labnav" aria-label="Atalhos do laboratório">
+      <button data-mode-btn="gallery" class="active">Vitrine</button><button data-mode-btn="conveyor">Esteira</button><button data-mode-btn="wave">Onda</button><button data-mode-btn="orbit">Órbita</button><button data-mode-btn="collage">Colagem</button><button data-mode-btn="context">Contexto</button><a class="back" href="../experimentos-dinamicos/">3 protótipos →</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-grid" id="heroGrid">
+    <div class="copy">
+      <div class="copy-in">
+        <div class="eyebrow" id="eyebrow">produção artesanal · Fortaleza</div>
+        <h1 id="headline">Tem coisa que a gente <em>come primeiro com os olhos.</em></h1>
+        <p class="lead" id="lead">Brownies, cookies, bolos, sobremesas e salgados preparados para transformar uma vontade pequena em um momento muito melhor.</p>
+        <div class="actions"><a class="cta" id="whats" href="https://wa.me/5585988208245?text=Olá%2C%20Sarah!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir pelo WhatsApp</a><a class="cta alt" href="#sabores">Ver sabores</a></div>
+        <div class="micro"><span>produção artesanal</span><span>encomendas</span><span>Fortaleza-CE</span></div>
+      </div>
+    </div>
+
+    <div class="stage" id="stage" aria-label="Vitrine dinâmica da Doçura da Sarah">
+      <div class="visual">
+        <img class="photo active" data-name="Brownie de Ninho" src="../assets/images/brownie-de-ninho-01.png" alt="Brownie de Ninho">
+        <img class="photo" data-name="Cookie Ninho com Nutella" src="../assets/images/cookie-ninho-com-nutella-01.png" alt="Cookie de Ninho com Nutella">
+        <img class="photo" data-name="Bolo amanteigado" src="../assets/images/bolo-fofo-amanteigado-01.png" alt="Bolo amanteigado">
+        <img class="photo" data-name="Pão recheado" src="../assets/images/pao-recheado-01.png" alt="Pão recheado">
+        <div class="belt" aria-hidden="true">
+          <div class="belt-col a"><img src="../assets/images/brownie-de-castanha-01.png" alt=""><img src="../assets/images/cookie-com-gotas-de-chocolate-01.png" alt=""><img src="../assets/images/bolo-fofo-amanteigado-01.png" alt=""><img src="../assets/images/brownie-de-brigadeiro-02.png" alt=""><img src="../assets/images/brownie-de-castanha-01.png" alt=""><img src="../assets/images/cookie-com-gotas-de-chocolate-01.png" alt=""></div>
+          <div class="belt-col b"><img src="../assets/images/pao-recheado-01.png" alt=""><img src="../assets/images/bem-casado-de-ninho-01.png" alt=""><img src="../assets/images/brownie-de-ninho-02.png" alt=""><img src="../assets/images/bolo-caseiro-01.png" alt=""><img src="../assets/images/pao-recheado-01.png" alt=""><img src="../assets/images/bem-casado-de-ninho-01.png" alt=""></div>
+        </div>
+        <div class="orbit" aria-hidden="true"><div class="orb"><img class="orb-img one" src="../assets/images/cookie-ninho-com-nutella-01.png" alt=""><img class="orb-img two" src="../assets/images/bem-casado-de-ninho-01.png" alt=""><img class="orb-img three" src="../assets/images/bolo-fofo-amanteigado-01.png" alt=""><div class="orb-core"><img src="../assets/images/brownie-de-ninho-01.png" alt=""></div></div></div>
+        <div class="collage" aria-hidden="true"><img class="cardimg c1" src="../assets/images/brownie-de-castanha-01.png" alt=""><img class="cardimg c2" src="../assets/images/cookie-ninho-com-nutella-01.png" alt=""><img class="cardimg c3" src="../assets/images/bolo-fofo-amanteigado-01.png" alt=""></div>
+        <div class="wash"></div><div class="pulse"></div>
+        <div class="label"><small id="modeLabel">Vitrine viva · Living 3</small><b id="productLabel">Brownie de Ninho</b></div>
+      </div>
+    </div>
+  </div>
+  <button class="split-handle" id="splitHandle" type="button" aria-label="Arraste para mudar a divisão da página"></button>
+</section>
+
+<section class="bridge"><div class="bridge-in"><div><b>Doce + salgado</b><span>um repertório que permite variar sem perder identidade</span></div><div><b>Feito com amor</b><span>a marca continua estável mesmo quando a vitrine muda</span></div><div><b>WhatsApp direto</b><span>a experiência nunca pode esconder a conversão</span></div><div><b>Living Layer</b><span>movimento forte no hero, calma na compra</span></div></div></section>
+
+<section class="section" id="sabores"><div class="wrap"><div class="section-head"><h2>Depois do impacto,<br>clareza para escolher.</h2><p>Esta parte permanece mais estável de propósito. O laboratório testa até onde o movimento aumenta desejo sem transformar a navegação em distração.</p></div><div class="products">
+  <article class="product"><img src="../assets/images/brownie-de-castanha-01.png" alt="Brownie de castanha"><div><small>Brownies</small><h3>Brownie de castanha</h3><p>Chocolate intenso e contraste de texturas.</p><a href="https://wa.me/5585988208245?text=Olá%2C%20Sarah!%20Quero%20saber%20sobre%20o%20Brownie%20de%20castanha." target="_blank" rel="noopener">Consultar →</a></div></article>
+  <article class="product"><img src="../assets/images/cookie-ninho-com-nutella-01.png" alt="Cookie Ninho com Nutella"><div><small>Cookies</small><h3>Ninho com Nutella</h3><p>Cremoso, generoso e marcante.</p><a href="https://wa.me/5585988208245?text=Olá%2C%20Sarah!%20Quero%20saber%20sobre%20o%20Cookie%20de%20Ninho%20com%20Nutella." target="_blank" rel="noopener">Consultar →</a></div></article>
+  <article class="product"><img src="../assets/images/bolo-fofo-amanteigado-01.png" alt="Bolo amanteigado"><div><small>Bolos</small><h3>Bolo amanteigado</h3><p>Macio e perfeito para acompanhar café.</p><a href="https://wa.me/5585988208245?text=Olá%2C%20Sarah!%20Quero%20saber%20sobre%20o%20Bolo%20amanteigado." target="_blank" rel="noopener">Consultar →</a></div></article>
+  <article class="product"><img src="../assets/images/pao-recheado-01.png" alt="Pão recheado"><div><small>Salgados</small><h3>Pão recheado</h3><p>Massa dourada e recheio cremoso.</p><a href="https://wa.me/5585988208245?text=Olá%2C%20Sarah!%20Quero%20saber%20sobre%20o%20Pão%20recheado." target="_blank" rel="noopener">Consultar →</a></div></article>
+</div></div></section>
+
+<section class="manifest"><div class="wrap"><div class="section-head"><h2>O que estamos<br>testando aqui.</h2><p>O ponto não é “animar o site”. É descobrir qual comportamento visual combina com confeitaria artesanal e aumenta apetite, lembrança e vontade de pedir.</p></div><div class="manifest-grid"><div class="manifest-card"><h3>Core estável</h3><p>Marca, texto, CTA, legibilidade e produto continuam reconhecíveis. <strong>O usuário nunca precisa reaprender a página.</strong></p></div><div class="manifest-card"><h3>Living Layer</h3><p>A camada visual pode variar em família, intensidade e contexto. <strong>O movimento vira linguagem da marca, não enfeite.</strong></p></div></div></div></section>
+</main>
+
+<aside class="control-panel" aria-label="Controles do laboratório">
+  <div class="controls">
+    <div class="ctrl"><label>Movimento</label><select id="modeSelect"><option value="gallery">Vitrine viva</option><option value="conveyor">Esteira de sabores</option><option value="wave">Corte ondulado</option><option value="orbit">Órbita de produtos</option><option value="collage">Colagem flutuante</option><option value="context">Flux contextual</option></select></div>
+    <div class="ctrl"><label>Living 0–5</label><div class="seg" id="livingSeg"><button data-living="0">0</button><button data-living="1">1</button><button data-living="2">2</button><button data-living="3" class="active">3</button><button data-living="4">4</button><button data-living="5">5</button></div></div>
+    <div class="ctrl"><label>Contexto</label><div class="seg" id="contextSeg"><button data-context="cafe" class="active">Café</button><button data-context="festa">Festa</button><button data-context="presente">Presente</button></div></div>
+    <button class="pause" id="pause" type="button">Pausar</button>
+  </div>
+  <div class="lab-hint">Dica: no desktop, arraste a divisória rosa para testar quanto da primeira dobra deve permanecer dinâmica.</div>
+</aside>
+
+<script>
+const body=document.body;
+const photos=[...document.querySelectorAll('.photo')];
+const productLabel=document.querySelector('#productLabel');
+const modeLabel=document.querySelector('#modeLabel');
+const modeSelect=document.querySelector('#modeSelect');
+const livingSeg=document.querySelector('#livingSeg');
+const contextSeg=document.querySelector('#contextSeg');
+const pause=document.querySelector('#pause');
+const splitHandle=document.querySelector('#splitHandle');
+const hero=document.querySelector('.hero');
+const headline=document.querySelector('#headline');
+const lead=document.querySelector('#lead');
+const eyebrow=document.querySelector('#eyebrow');
+let idx=0,timer=null,drag=false;
+const modeNames={gallery:'Vitrine viva',conveyor:'Esteira',wave:'Corte ondulado',orbit:'Órbita',collage:'Colagem',context:'Flux contextual'};
+const contexts={
+ cafe:{eyebrow:'para acompanhar um café · Fortaleza',headline:'Uma pausa pequena. <em>Uma vontade enorme de repetir.</em>',lead:'Bolos, brownies e cookies para transformar café em ritual.',photos:[2,0,1]},
+ festa:{eyebrow:'para celebrar · Fortaleza',headline:'A mesa chama atenção. <em>O sabor faz ficar.</em>',lead:'Doces e salgados artesanais para aniversários, encontros e momentos que merecem mais cor.',photos:[0,1,3]},
+ presente:{eyebrow:'para presentear · Fortaleza',headline:'Um presente que <em>não fica só na embalagem.</em>',lead:'Escolhas artesanais para surpreender alguém — inclusive você.',photos:[1,0,2]}
+};
+function living(){return body.dataset.living||'3'}
+function setMode(mode){body.dataset.mode=mode;modeSelect.value=mode;document.querySelectorAll('[data-mode-btn]').forEach(b=>b.classList.toggle('active',b.dataset.modeBtn===mode));modeLabel.textContent=`${modeNames[mode]} · Living ${living()}`;if(mode==='context')applyContext(body.dataset.context);}
+function setLiving(n){body.dataset.living=n;livingSeg.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.living===n));modeLabel.textContent=`${modeNames[body.dataset.mode]} · Living ${n}`;}
+function applyContext(c){body.dataset.context=c;contextSeg.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.context===c));const x=contexts[c];if(body.dataset.mode==='context'){eyebrow.textContent=x.eyebrow;headline.innerHTML=x.headline;lead.textContent=x.lead;showPhoto(x.photos[0]);}else{eyebrow.textContent='produção artesanal · Fortaleza';headline.innerHTML='Tem coisa que a gente <em>come primeiro com os olhos.</em>';lead.textContent='Brownies, cookies, bolos, sobremesas e salgados preparados para transformar uma vontade pequena em um momento muito melhor.'}}
+function showPhoto(i){idx=i%photos.length;photos.forEach((p,j)=>p.classList.toggle('active',j===idx));productLabel.textContent=photos[idx].dataset.name}
+function nextPhoto(){if(body.classList.contains('paused')||body.dataset.living==='0'||['conveyor','orbit','collage'].includes(body.dataset.mode))return;const c=contexts[body.dataset.context];if(body.dataset.mode==='context'){const pos=c.photos.indexOf(idx);showPhoto(c.photos[(pos+1)%c.photos.length])}else showPhoto(idx+1)}
+function restart(){clearInterval(timer);const ms=5600-Math.min(5,+living())*430;timer=setInterval(nextPhoto,Math.max(ms,2500))}
+modeSelect.addEventListener('change',e=>{setMode(e.target.value);restart()});document.querySelectorAll('[data-mode-btn]').forEach(b=>b.addEventListener('click',()=>{setMode(b.dataset.modeBtn);restart()}));
+livingSeg.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;setLiving(b.dataset.living);restart()});contextSeg.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;applyContext(b.dataset.context)});
+pause.addEventListener('click',()=>{body.classList.toggle('paused');pause.textContent=body.classList.contains('paused')?'Continuar':'Pausar'});
+splitHandle.addEventListener('pointerdown',e=>{drag=true;splitHandle.setPointerCapture(e.pointerId)});splitHandle.addEventListener('pointermove',e=>{if(!drag)return;const r=hero.getBoundingClientRect();let p=(e.clientX-r.left)/r.width*100;p=Math.max(38,Math.min(62,p));document.documentElement.style.setProperty('--split',p+'%')});splitHandle.addEventListener('pointerup',()=>drag=false);splitHandle.addEventListener('pointercancel',()=>drag=false);
+window.addEventListener('keydown',e=>{if(e.key===' '&&e.target===body){e.preventDefault();pause.click()}if(/^[0-5]$/.test(e.key))setLiving(e.key)});
+setMode('gallery');setLiving('3');applyContext('cafe');restart();
+</script>
+</body></html>
