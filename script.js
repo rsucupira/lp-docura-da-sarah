@@ -1,6 +1,11 @@
 (() => {
   "use strict";
 
+  const motionStyle = document.createElement("link");
+  motionStyle.rel = "stylesheet";
+  motionStyle.href = "uebey-motion.css?v=20260825";
+  document.head.appendChild(motionStyle);
+
   const phone = "5585988208245";
 
   const whatsappUrl = (message) =>
@@ -71,6 +76,39 @@
 
   const year = document.querySelector("#year");
   if (year) year.textContent = new Date().getFullYear();
+
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const motionTargets = [
+    ...document.querySelectorAll(".section-heading, .featured-card, .catalog-card, .trust-grid > div")
+  ];
+  motionTargets.forEach((element, index) => {
+    element.classList.add("um-ready");
+    element.style.setProperty("--um-delay", `${Math.min(index % 4, 3) * 70}ms`);
+  });
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    motionTargets.forEach((element) => element.classList.add("um-in"));
+  } else {
+    const motionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("um-in");
+          motionObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .1, rootMargin: "70px 0px -30px" });
+    motionTargets.forEach((element) => motionObserver.observe(element));
+  }
+
+  const collage = document.querySelector(".hero-collage");
+  if (collage && !reduceMotion && matchMedia("(pointer:fine)").matches) {
+    collage.addEventListener("pointermove", (event) => {
+      const rect = collage.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - .5;
+      const y = (event.clientY - rect.top) / rect.height - .5;
+      collage.style.transform = `rotateY(${(x * 2.5).toFixed(2)}deg) rotateX(${(-y * 2).toFixed(2)}deg)`;
+    }, { passive: true });
+    collage.addEventListener("pointerleave", () => { collage.style.transform = ""; }, { passive: true });
+  }
 
   // Assinatura discreta Uebey no rodapé
   const footerGrid = document.querySelector(".site-footer .footer-grid");
